@@ -1,0 +1,20 @@
+body{
+    background-color: #fcf9ff;
+}
+
+.navbar{
+    background-color: #ffff;
+    text-align: center;
+    display: flex;
+}
+
+.container{
+    padding-left:100px;
+    padding-right:100px;
+
+
+}
+
+.logo{
+    height:100%;
+}

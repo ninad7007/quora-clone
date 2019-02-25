@@ -1,0 +1,38 @@
+<% include header %>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-9">
+                <div class="thumbnail" style="padding-left:50px; padding-right: 100px;">
+                        
+                        <h3 style=""><%= quest.question %></h3>
+                        <a href="/question/<%= quest._id %>/answers/new" class="btn btn-primary">Answer</a>
+                        <a href="#" class="pull-right">Follow</a>
+                        <a href="#" class="pull-right" style="padding-right:20px;">Pass</a>
+                </div>
+
+                <div class="well">
+                    
+                    <h3>Answers:</h3>
+                    <% quest.answers.forEach(function(ans){ %>
+                        <div class="thumbnail">
+                            <h5> <strong><%=ans.author%></strong> </h5>
+                            <a class="pull-right" href="/question/<%=ans._id%>/<%=quest._id%>/comments/new">comment</a>
+                            <p><%=ans.answer%></p>
+                            <div class="well" style="padding-right:20px;">
+                        <%  ans.comments.forEach(function(comment){ %>
+
+                                <p><strong><%= comment.author %></strong></p>
+                                <p><%= comment.text %></p>
+                                <% }) %>
+                            </div>
+                    </div>
+                        <% }) %>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Related Questions</h4>
+                <hr style="color:black">
+            </div>
+        </div>
+    </div>
+<% include footer %>
